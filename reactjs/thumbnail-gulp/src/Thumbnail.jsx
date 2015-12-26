@@ -1,4 +1,6 @@
-// Define thumbnail
+var React = require('react');
+var Badge = require('./Badge');
+
 var Thumbnail = React.createClass({
    render: function() {
       return (
@@ -24,3 +26,5 @@ var Thumbnail = React.createClass({
       )
    }
 });
+
+module.exports = Thumbnail;

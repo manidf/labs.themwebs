@@ -1,4 +1,5 @@
-var Thumbnail = require('thumbnail');
+var React = require('react');
+var Thumbnail = require('./Thumbnail');
 
 // Define Thumbnail list
 var ThumbnailList = React.createClass({
@@ -12,3 +13,5 @@ var ThumbnailList = React.createClass({
       </div>
    }
 });
+
+module.exports = ThumbnailList;
