@@ -8,9 +8,8 @@
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <script src="https://fb.me/react-0.14.3.js"></script>
-    <script src="https://fb.me/react-dom-0.14.3.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script src="application.js"></script>
+
 
     <style>
         .demo-layout-transparent {
@@ -85,80 +84,4 @@
     </main>
 </div>
 </body>
-<script type="text/jsx">
-    // Define a  react component class
-    var Badge = React.createClass({
-        render: function() {
-            return (
-                    <button className="mdl-button mdl-js-button mdl-button--raised" type="button">
-                        <span className="mdl-badge" data-badge={this.props.number}>{this.props.title}</span>
-                    </button>
-            )
-        }
-    });
-
-    // Define thumbnail
-    var Thumbnail = React.createClass({
-        render: function() {
-            return (
-                <div className="mdl-cell mdl-cell--4-col">
-                    <div className="demo-card-wide mdl-card mdl-shadow--2dp">
-                        <div className="mdl-card__title">
-                            <h2 className="mdl-card__title-text">{this.props.header}</h2>
-                            <img className="mdl-card__img" src={this.props.imgURL} alt={this.props.header} />
-                        </div>
-                        <div className="mdl-card__supporting-text">
-                            {this.props.description}
-                        </div>
-                        <div className="mdl-card__actions mdl-card--border">
-                            <Badge title={this.props.title} number={this.props.number} />
-                        </div>
-                        <div className="mdl-card__menu">
-                        <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                            <i className="material-icons">share</i>
-                        </button>
-                    </div>
-                    </div>
-                </div>
-            )
-        }
-    });
-
-    var ThumbnailList = React.createClass({
-        render: function() {
-            var list = this.props.thumbnailData.map(function(thumbnailProps){
-                return <Thumbnail {...thumbnailProps} />
-            });
-
-            return <div>
-                {list}
-            </div>
-        }
-    });
-
-    var options = {
-        thumbnailData: [{
-            id: 1,
-            title: 'Beijing',
-            number: 1,
-            header: 'Visit Beijing',
-            description: 'Wangfujing Street is one of the busiest shopping streets in Beijing with nearly 100,000 visitors daily (August 2008). The sale of consumer goods both retail ...',
-            imgURL: '../assets/Wangfujing_street_Beijing.jpg'
-        },{
-            id: 2,
-            title: 'Shanghai',
-            number: 25,
-            header: 'Visit Shanghai',
-            description: 'Shanghai City Hall, Shanghai Chenhuangmiao the Yuyuan Garden Bazar ...',
-            imgURL: '../assets/yuyuan-garden.jpg'
-        }]
-    };
-
-    // Render class
-    var element = React.createElement(ThumbnailList, options);
-
-    // place it on the body
-    ReactDOM.render(element, document.querySelector('.target'));
-
-</script>
 </html>

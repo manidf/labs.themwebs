@@ -15,7 +15,7 @@
     <style>
         .demo-layout-transparent {
             /* Photo Credit: http://www.theguardian.com/travel/2015/dec/26/guizhou-china-city-guiyang-holiday#img-1*/
-            background: url('guizhou-china.jpg') center / cover;
+            background: url('../assets/guizhou-china.jpg') center / cover;
         }
         .demo-layout-transparent .mdl-layout__header,
         .demo-layout-transparent .mdl-layout__drawer-button {
@@ -30,10 +30,20 @@
         .demo-card-wide.mdl-card {
             width: 512px;
         }
-        .demo-card-wide > .mdl-card__title {
+        .mdl-card__title-text {
+            z-index: 10;
+            color: white;
+        }
+        .mdl-card__title {
+            height: 180px;
+        }
+        .mdl-card__img {
             color: #fff;
             height: 176px;
-            background: url('http://www.getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
         }
         .demo-card-wide > .mdl-card__menu {
             color: #fff;
@@ -46,7 +56,7 @@
     <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Thumbnails</span>
+            <span class="mdl-layout-title">VISIT CHINA</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->
@@ -59,7 +69,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">MENU</span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
@@ -68,10 +78,9 @@
         </nav>
     </div>
     <main class="mdl-layout__content">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col target"> </div>
-            <div class="mdl-cell mdl-cell--4-col">4</div>
-            <div class="mdl-cell mdl-cell--4-col">4</div>
+        <div class="mdl-grid target ">
+          <!--content renders here-->
+
         </div>
     </main>
 </div>
@@ -92,35 +101,61 @@
     var Thumbnail = React.createClass({
         render: function() {
             return (
+                <div className="mdl-cell mdl-cell--4-col">
                     <div className="demo-card-wide mdl-card mdl-shadow--2dp">
                         <div className="mdl-card__title">
                             <h2 className="mdl-card__title-text">{this.props.header}</h2>
+                            <img className="mdl-card__img" src={this.props.imgURL} alt={this.props.header} />
                         </div>
                         <div className="mdl-card__supporting-text">
                             {this.props.description}
                         </div>
                         <div className="mdl-card__actions mdl-card--border">
-                           <Badge title={this.props.title} number={this.props.number} />
+                            <Badge title={this.props.title} number={this.props.number} />
                         </div>
                         <div className="mdl-card__menu">
-                            <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                <i className="material-icons">share</i>
-                            </button>
-                        </div>
+                        <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                            <i className="material-icons">share</i>
+                        </button>
                     </div>
+                    </div>
+                </div>
             )
         }
     });
 
+    var ThumbnailList = React.createClass({
+        render: function() {
+            var list = this.props.thumbnailData.map(function(thumbnailProps){
+                return <Thumbnail {...thumbnailProps} />
+            });
+
+            return <div>
+                {list}
+            </div>
+        }
+    });
+
     var options = {
-        title: 'See Tutorial',
-        number: 32,
-        header: 'Learn react',
-        description: 'React is a fantastice new library for making dynamicp pages. React is full of great features for mobile.'
+        thumbnailData: [{
+            id: 1,
+            title: 'Beijing',
+            number: 1,
+            header: 'Visit Beijing',
+            description: 'Wangfujing Street is one of the busiest shopping streets in Beijing with nearly 100,000 visitors daily (August 2008). The sale of consumer goods both retail ...',
+            imgURL: '../assets/Wangfujing_street_Beijing.jpg'
+        },{
+            id: 2,
+            title: 'Shanghai',
+            number: 25,
+            header: 'Visit Shanghai',
+            description: 'Shanghai City Hall, Shanghai Chenhuangmiao the Yuyuan Garden Bazar ...',
+            imgURL: '../assets/yuyuan-garden.jpg'
+        }]
     };
 
     // Render class
-    var element = React.createElement(Thumbnail, options);
+    var element = React.createElement(ThumbnailList, options);
 
     // place it on the body
     ReactDOM.render(element, document.querySelector('.target'));
