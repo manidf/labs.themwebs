@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reactjs - Button</title>
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="https://fb.me/react-0.14.3.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+
+</head>
+<body>
+    <section id="main" className="main" role="main">
+
+    </section>
+</body>
+<script type="text/jsx">
+    // Define a  react component class
+    var Badge = React.createClass({
+        render: function() {
+            this.props // {}
+
+            return (
+                    <button className="mdl-button mdl-js-button mdl-button--raised" type="button">
+                        <span className="mdl-badge" data-badge={this.props.number}>{this.props.title}</span>
+                    </button>
+            )
+        }
+    });
+
+    var options = {
+        title: 'Inbox',
+        number: 2
+    };
+
+    // Render class
+    var element = React.createElement(Badge, options);
+
+    // place it on the body
+    ReactDOM.render(element, document.querySelector('.main'));
+
+</script>
+</html>
