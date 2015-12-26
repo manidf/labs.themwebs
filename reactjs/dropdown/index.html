@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VISIT CHINA</title>
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        .demo-layout-transparent {
+            /* Photo Credit: http://www.theguardian.com/travel/2015/dec/26/guizhou-china-city-guiyang-holiday#img-1*/
+            background: url('../assets/guizhou-china.jpg') center / cover;
+        }
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button {
+            color: white;
+        }
+        .mdl-button .mdl-badge[data-badge]:after {
+            top: -4px;
+            right: -27px;
+        }
+
+        /*Demo card*/
+        .demo-card-wide.mdl-card {
+            width: 512px;
+        }
+        .mdl-card__title-text {
+            z-index: 10;
+            color: white;
+        }
+        .mdl-card__title {
+            height: 180px;
+        }
+        .mdl-card__img {
+            color: #fff;
+            height: 176px;
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+        }
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">VISIT CHINA</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">MENU</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="mdl-grid target">
+          <!--content renders here-->
+
+        </div>
+    </main>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

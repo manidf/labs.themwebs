@@ -3,4 +3,5 @@
 out
 gen
 node_modules
+reactjs/dropdown/node_modules
 reactjs/thumbnail-gulp/node_modules
