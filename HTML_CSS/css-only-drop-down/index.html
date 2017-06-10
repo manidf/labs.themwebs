@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS only Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
+    <label for="show-nav" class="show-nav">Show Menu</label>
+    <input type="checkbox" id="show-nav" role="button">
+    <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#about">About us ￬</a>
+            <ul class="hidden sub-nav">
+                <li><a href="#">History</a></li>
+                <li><a href="#">What We Do</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact us</a></li>
+    </ul>
 </body>
 </html>
