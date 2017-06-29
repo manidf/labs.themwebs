@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; }
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #EEE;
     margin: 0;
@@ -7,6 +11,7 @@ body {
 
 .nav {
     list-style-type: none;
+    transition: delay cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .nav li {
@@ -14,6 +19,7 @@ body {
     float: left;
     margin-right: 1px;
 }
+
 
 /* Main links in the main nav*/
 .nav li a {
@@ -31,37 +37,46 @@ body {
     background-color: #48A9A6;
 }
 
+
 /* hover for first level links */
+
 .nav li:hover a {
     background-color: #48A9A6;
 }
 
+
 /* style for the dropdown links */
+
 .nav li:hover .sub-nav a {
-   background-color: #888;
-   color: #FFF;
-   height: 30px;
-   line-height: 30px;
+    background-color: #888;
+    color: #FFF;
+    height: 30px;
+    line-height: 30px;
 }
 
+
 /* hover state for the drop down links */
+
 .nav li:hover .sub-nav a:hover {
     background-color: #4281A4;
     color: #FFF;
 }
 
+
 /* hide links till needed */
+
 .sub-nav.hidden {
     display: none;
 }
 
+
 /* make sub nav verticle */
+
 .sub-nav li {
     display: block;
     float: none;
 }
 
-/* show the dropdown on hover */
 /* use adjacent sibling selector to select sub nav*/
 .nav li a:hover + .sub-nav, .sub-nav:hover {
     display: block;
@@ -69,7 +84,7 @@ body {
 
 .sub-nav li a {
     width: auto;
-    min-width:  100px;
+    min-width: 100px;
 }
 
 .show-nav {
@@ -79,23 +94,29 @@ body {
     color: #FFF;
     text-align: center;
     padding: 10px 0;
-    display: none;
+    display: block;
 }
 
+
 /* hide checkbox */
+
 input[type=checkbox] {
     display: none;
 }
 
+
 /* show nav when invisible checkbox is checked */
+
 input[type=checkbox]:checked ~ .nav {
     display: block;
+    transform: translateX(0px);
 }
 
 @media screen and (max-width: 767px) {
     .nav {
-        position: static;
-        display: none;
+        /*position: static;*/
+        display: block;
+        transform: translateX(-1000000px);
     }
     .nav li {
         margin-bottom: 1px;
