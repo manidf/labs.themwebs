@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    />
     <title>Forms</title>
 </head>
-<body>
 
-<form class="jsRegistrationForm" method="post" action="">
-    <input class="jsName" name="name" type="text" placeholder="name">
-</form>
-<script src="app.js"></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <p> &nbsp; </p>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form class="jsRegistrationForm" name="registrationform" method="get" action="">
+                    <div class="form-group">
+                        <label for="Name" aria-labelledby="name">Name:</label>
+                         <input class="jsName form-control" name="name" type="text" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                         <label for="Surname" aria-labelledby="surname">Surname</label>
+                         <input class="jsSurname form-control" name="surname" type="text" placeholder="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender" aria-labelledby="Gender">Gender</label>
+                        <select name="gender">
+                            <option value="male" aria-labelledby="male">Male</option>
+                            <option value="female" arial-labelledby="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="jsButton" name="send" value="Send" type="submit" aria-describedby="submit"></input>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>

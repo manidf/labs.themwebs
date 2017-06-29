@@ -2,10 +2,13 @@
     "use strict";
 
     var registrationForm = function() {
-        var name = document.querySelector('.jsName');
+        var nameInput = document.querySelector('.jsName').nodeValue;
+        var emailInput = document.querySelector('jsEmail').value;
+
     }
 
+    console.log('init registration form');
+    console.log(registrationForm.nameInput);
     return {};
 
-    console.log('init registration form');
 })();
