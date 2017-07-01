@@ -34,7 +34,7 @@
 </head>
 <body>
     <div id="formMessage" class="is-hidden"></div>
-    <form id="subscriptionForm" action="mail.php">
+    <form id="subscriptionForm" method="post" action="mail.php">
         <div class="field">
              <label aria-labelledby="name" for="name">Name</label>
              <input type="text" name="name">
