@@ -1,5 +1,5 @@
 <?php
-    // http://blog.teamtreehouse.com/create-ajax-contact-form
+    // credit: http://blog.teamtreehouse.com/create-ajax-contact-form
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.

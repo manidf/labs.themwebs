@@ -1,4 +1,5 @@
 $(function() {
+    // credit: http://blog.teamtreehouse.com/create-ajax-contact-form
     // 1. get the form
     const form = $('#subscriptionForm');
     const formMessage = $('#formMessage');
