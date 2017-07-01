@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+    <style>
+        .field {
+            border-bottom: 1px solid #EEE;
+            padding: .5em;
+        }
+        #formMessage {
+            border: 2px solid red;
+            background-color: #EEE;
+        }
+    </style>
+</head>
+<body>
+    <div id="formMessage"></div>
+    <form id="contact-form" action="send.php">
+        <div class="field">
+             <label aria-labelledby="name" for="name">Name</label>
+             <input type="text" name="name">
+        </div>
+        <div class="field">
+             <label aria-labelledby="email" for="email">Email</label>
+             <input type="text" name="Email">
+        </div>
+        <div class="field">
+             <input type="submit" name="submit">
+        </div>
+    </form>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+</body>
+</html>
